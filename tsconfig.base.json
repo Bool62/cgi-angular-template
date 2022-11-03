@@ -14,7 +14,17 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@cgi-template-angular/lib-dto": ["libs/lib-dto/src/index.ts"],
+      "@cgi-template-angular/lib-model": ["libs/lib-model/src/index.ts"],
+      "@cgi-template-angular/lib-service-metier": [
+        "libs/lib-service-metier/src/index.ts"
+      ],
+      "@cgi-template-angular/lib-service-rest": [
+        "libs/lib-service-rest/src/index.ts"
+      ],
+      "@cgi-template-angular/lib-ui": ["libs/lib-ui/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
