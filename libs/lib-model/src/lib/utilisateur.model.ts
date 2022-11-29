@@ -1,4 +1,4 @@
-export interface IUtilisateurDTO {
+export interface IUtilisateur {
   id: number;
   login: string;
   nom: string;
@@ -6,7 +6,7 @@ export interface IUtilisateurDTO {
   mail: string;
 }
 
-export const UTILISATEUR_DTO_MOCK: IUtilisateurDTO = {
+export const UTILISATEUR_MODEL_MOCK: IUtilisateur = {
   id: 1,
   login: 'alain.terrieur',
   nom: 'terrieur',

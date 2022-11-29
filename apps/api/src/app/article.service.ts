@@ -4,7 +4,7 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class ArticleService {
   getArticles(): IArticleDTO[] {
-    return [ARTICLE_DTO_MOCK, ARTICLE_DTO_MOCK];
+    return [ARTICLE_DTO_MOCK, { ...ARTICLE_DTO_MOCK, id: 2 }];
   }
 
   getArticleById(id: number): IArticleDTO {
