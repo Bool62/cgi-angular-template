@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class ArticleService {
-  getArticle(): IArticleDTO[] {
+  getArticles(): IArticleDTO[] {
     return [ARTICLE_DTO_MOCK, ARTICLE_DTO_MOCK];
   }
 

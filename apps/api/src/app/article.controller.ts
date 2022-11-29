@@ -1,14 +1,18 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Query } from '@nestjs/common';
 
 import { ArticleService } from './article.service';
 
-@Controller("article")
+@Controller('article')
 export class ArticleController {
   constructor(private readonly articleService: ArticleService) {}
 
   @Get()
-  getArticle() {
-    return this.articleService.getArticle();
+  getArticles() {
+    return this.articleService.getArticles();
   }
 
+  @Get('id')
+  getArticleById(@Query('id') id: number) {
+    return this.articleService.getArticleById(id);
+  }
 }

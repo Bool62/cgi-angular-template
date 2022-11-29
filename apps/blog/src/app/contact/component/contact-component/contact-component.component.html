@@ -1,0 +1,91 @@
+<h1 class="intertitre">Contact</h1>
+
+<h2>Mon histoire</h2>
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tristique leo
+  non justo facilisis, cursus convallis lorem pretium. Ut sollicitudin enim
+  turpis, vitae gravida lacus hendrerit id. Fusce finibus aliquam mauris at
+  lacinia. Suspendisse non varius lectus. Cras feugiat magna eu neque hendrerit
+  aliquam. In hac habitasse platea dictumst. Aenean consectetur mi sodales elit
+  facilisis rutrum. Duis pulvinar, lectus ac mollis placerat, nisi nibh commodo
+  erat, eget maximus dolor odio ut sapien. Praesent pulvinar velit non ligula
+  finibus dapibus. Vestibulum semper nisl vel nibh iaculis, suscipit venenatis
+  nulla facilisis. Mauris et ipsum id erat tincidunt lacinia sit amet at neque.
+  Proin sodales faucibus euismod. In euismod, mauris quis interdum dictum, purus
+  lacus venenatis ipsum, sed mattis libero metus volutpat arcu. Duis iaculis
+  tristique enim, sed ornare ipsum cursus sed. Pellentesque hendrerit vestibulum
+  nulla ut congue. Nam nisl leo, scelerisque eget sodales id, posuere id tellus.
+  Donec laoreet lobortis quam eget viverra. Mauris ultrices nulla eget urna
+  tincidunt, nec ullamcorper dui interdum. Vivamus dictum eros a ante laoreet
+  hendrerit sed id sem. Morbi id purus rutrum, pharetra magna id, tincidunt
+  libero. Donec ultrices diam dapibus, interdum augue et, venenatis lorem.
+  Aenean nec elementum est. Proin eget mi eu turpis finibus lobortis in at
+  massa. In ut facilisis turpis. Praesent commodo eget quam ut auctor. Quisque
+  et tincidunt ante. Duis tempor mi vitae dignissim mollis. Integer lorem nunc,
+  rhoncus iaculis laoreet sit amet, egestas in ex. Suspendisse mattis nulla eu
+  tincidunt imperdiet. Integer consequat hendrerit enim et consequat. Proin
+  venenatis, eros quis molestie rhoncus, arcu mi posuere metus, eu accumsan
+  metus nibh sit amet dolor.
+</p>
+
+<h2>Ma Mission</h2>
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tristique leo
+  non justo facilisis, cursus convallis lorem pretium. Ut sollicitudin enim
+  turpis, vitae gravida lacus hendrerit id. Fusce finibus aliquam mauris at
+  lacinia. Suspendisse non varius lectus. Cras feugiat magna eu neque hendrerit
+  aliquam. In hac habitasse platea dictumst. Aenean consectetur mi sodales elit
+  facilisis rutrum. Duis pulvinar, lectus ac mollis placerat, nisi nibh commodo
+  erat, eget maximus dolor odio ut sapien. Praesent pulvinar velit non ligula
+  finibus dapibus. Vestibulum semper nisl vel nibh iaculis, suscipit venenatis
+  nulla facilisis. Mauris et ipsum id erat tincidunt lacinia sit amet at neque.
+</p>
+<p>
+  Proin sodales faucibus euismod. In euismod, mauris quis interdum dictum, purus
+  lacus venenatis ipsum, sed mattis libero metus volutpat arcu. Duis iaculis
+  tristique enim, sed ornare ipsum cursus sed. Pellentesque hendrerit vestibulum
+  nulla ut congue. Nam nisl leo, scelerisque eget sodales id, posuere id tellus.
+  Donec laoreet lobortis quam eget viverra. Mauris ultrices nulla eget urna
+  tincidunt, nec ullamcorper dui interdum. Vivamus dictum eros a ante laoreet
+  hendrerit sed id sem. Morbi id purus rutrum, pharetra magna id, tincidunt
+  libero.
+</p>
+
+<h2>Me contacter</h2>
+
+<form [formGroup]="formContact">
+  <!-- Name -->
+  <div>
+    <mat-form-field class="input-full-width">
+      <input matInput placeholder="Nom" formControlName="name" />
+      <mat-error *ngIf="errorHandling('name','required')">
+        Le champs est obligatoire
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <!-- Email -->
+  <div>
+    <mat-form-field class="input-full-width">
+      <input matInput placeholder="Email" formControlName="mail" />
+      <mat-error *ngIf="errorHandling('mail','required')">
+        Le champs est obligatoire
+      </mat-error>
+      <mat-error *ngIf="errorHandling('mail','email')">
+        Le format est invalide
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <!-- Content -->
+  <div>
+    <mat-form-field class="input-full-width">
+      <textarea matInput placeholder="Contenu..." formControlName="content" ></textarea>
+      <mat-error *ngIf="errorHandling('content','required')">
+        Le champs est obligatoire
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <!-- Submit -->
+  <div>
+    <button mat-flat-button color="primary" [disabled]="!formContact.valid" (click)="contact()">Envoyer</button>
+  </div>
+</form>
