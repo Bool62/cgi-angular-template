@@ -8,11 +8,15 @@ import { ArticleRoutingModule } from './articles-routing.module';
 import { ListeArticleComponentComponent } from './component/liste-article-component/liste-article-component.component';
 import { ListeArticleContainerComponent } from './container/liste-article-container/liste-article-container.component';
 import { MatCardModule } from '@angular/material/card';
+import { AjoutArticleContainerComponent } from './container/ajout-article-container/ajout-article-container.component';
+import { AjoutArticleComponentComponent } from './component/ajout-article-component/ajout-article-component.component';
 
 @NgModule({
   declarations: [
     ListeArticleComponentComponent,
     ListeArticleContainerComponent,
+    AjoutArticleContainerComponent,
+    AjoutArticleComponentComponent,
   ],
   imports: [
     CommonModule,

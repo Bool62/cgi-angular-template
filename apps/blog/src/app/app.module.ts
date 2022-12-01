@@ -11,6 +11,8 @@ import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { environment } from '../environments/environment';
 import { ArticleState } from './store/article.state';
 import { HttpClientModule } from '@angular/common/http';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,6 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
       developmentMode: !environment.production,
     }),
     HttpClientModule,
+    MatSidenavModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
