@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { IArticle } from '@cgi-template-angular/lib-model';
+import { Store } from '@ngxs/store';
+import { ArticleAction } from '../../../store/article.action';
 
 @Component({
   selector: 'cgi-template-angular-ajout-article-container',
@@ -6,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ajout-article-container.component.scss'],
 })
 export class AjoutArticleContainerComponent implements OnInit {
-  constructor() {}
+  constructor(private store: Store) {}
 
   ngOnInit(): void {}
+
+  onAjouter(article: IArticle): void {
+    this.store.dispatch(new ArticleAction.Add({ article: article }));
+  }
 }

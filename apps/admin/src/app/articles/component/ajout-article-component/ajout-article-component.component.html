@@ -1,13 +1,8 @@
-<h1 class="intertitre">Ajout</h1>
-
 <form [formGroup]="formAjout">
   <!-- Name -->
   <div>
     <mat-form-field class="input-full-width">
       <input matInput placeholder="Titre" formControlName="titre" />
-      <mat-error *ngIf="errorHandling('titre', 'required')">
-        Le champs est obligatoire
-      </mat-error>
     </mat-form-field>
   </div>
   <div>
@@ -21,8 +16,8 @@
     <button
       mat-flat-button
       color="primary"
-      [disabled]="!formContact.valid"
-      (click)="ajout()"
+      [disabled]="!formAjout.valid"
+      (click)="onAjout()"
     >
       Ajouter
     </button>

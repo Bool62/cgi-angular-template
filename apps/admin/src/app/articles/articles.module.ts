@@ -27,6 +27,7 @@ import { AjoutArticleComponentComponent } from './component/ajout-article-compon
     FormsModule,
     ReactiveFormsModule,
     MatCardModule,
+
   ],
 })
 export class ArticleModule {}

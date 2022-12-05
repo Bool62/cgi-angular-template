@@ -27,6 +27,16 @@ export class ArticleService {
     );
   }
 
+  public postArticle(article: IArticle): Observable<IArticle> {
+    return this.articleRestService
+      .postArticle(this.mappingIArticleToIArticleDTO(article))
+      .pipe(
+        map((data) => {
+          return this.mappingIArticleDTOToIArticle(data);
+        })
+      );
+  }
+
   /**
    * Mapping object Rest To object Domain
    * @param rest rest Object

@@ -1,4 +1,5 @@
-import { Controller, Get, Query } from '@nestjs/common';
+import { IArticleDTO } from '@cgi-template-angular/lib-dto';
+import { Body, Controller, Get, Post, Query } from '@nestjs/common';
 
 import { ArticleService } from './article.service';
 
@@ -14,5 +15,10 @@ export class ArticleController {
   @Get('id')
   getArticleById(@Query('id') id: number) {
     return this.articleService.getArticleById(id);
+  }
+
+  @Post()
+  async postArticlle(@Body() article: IArticleDTO): Promise<IArticleDTO> {
+    return this.articleService.saveArticle(article);
   }
 }

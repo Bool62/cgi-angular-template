@@ -9,6 +9,11 @@ export const appRoutes: Routes = [
       import('./articles/articles.module').then((m) => m.ArticleModule),
   },
   {
+    path: 'ajout',
+    loadChildren: () =>
+      import('./articles/articles.module').then((m) => m.ArticleModule),
+  },
+  {
     path: '**',
     component: PageNotFoundComponent,
   },

@@ -86,4 +86,37 @@ export class ArticleState {
       count: action.payload.articles.length,
     });
   }
+
+  @Action(ArticleAction.Add)
+  reducerAdd(ctx: StateContext<ArticleStateModel>, action: ArticleAction.Add) {
+    return this.articleService.postArticle(action.payload.article).pipe(
+      switchMap((article: IArticle) => {
+        return ctx.dispatch(new ArticleAction.AddSuccess({ article: article }));
+      })
+    );
+  }
+
+  @Action(ArticleAction.AddSuccess)
+  effectAddSuccess(
+    ctx: StateContext<ArticleStateModel>,
+    action: ArticleAction.AddSuccess
+  ) {
+    const state = ctx.getState();
+    const ids: number[] = [];
+    const articles: Map<number, IArticle> = new Map<number, IArticle>();
+
+    state.articles.forEach((article) => {
+      articles.set(article.id, article);
+      ids.push(article.id);
+    });
+
+    articles.set(action.payload.article.id, action.payload.article);
+    ids.push(action.payload.article.id);
+
+    return ctx.patchState({
+      ids: ids,
+      articles: articles,
+      count: ids.length,
+    });
+  }
 }
