@@ -13,6 +13,7 @@ import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 import { ArticleState } from './store/article.state';
+import { ThemeState } from './store/theme.state';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,7 +25,7 @@ import { ArticleState } from './store/article.state';
     FormsModule,
     ReactiveFormsModule,
     NgxsLoggerPluginModule.forRoot(),
-    NgxsModule.forRoot([ArticleState], {
+    NgxsModule.forRoot([ArticleState, ThemeState], {
       developmentMode: !environment.production,
     }),
     HttpClientModule,

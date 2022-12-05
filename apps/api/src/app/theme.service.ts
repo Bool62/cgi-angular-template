@@ -4,7 +4,7 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class ThemeService {
   getThemes(): IThemeDTO[] {
-    return [THEME_DTO_MOCK, THEME_DTO_MOCK];
+    return [THEME_DTO_MOCK, { ...THEME_DTO_MOCK, id: 2 }];
   }
 
   getThemeById(id: number): IThemeDTO {
